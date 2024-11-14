@@ -1,0 +1,142 @@
+#s-projects {
+  @include spacing-section;
+  text-align: center;
+  background-color: $bg-main;
+
+  .grid-layout {
+    h2 {
+      @include title-section();
+
+      span {
+        color: $color-main;
+      }
+    }
+
+    #projects {
+      margin: $gap-3 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-wrap: wrap;
+      text-align: left;
+
+      .ignitetimer {
+        border: 1px solid rgb(0, 135, 95);
+
+        &:hover {
+          border: 1px solid rgb(0, 135, 95);
+        }
+      }
+
+      .widget {
+        border: 1px solid rgb(130 87 230);
+
+        &:hover {
+          border: 1px solid rgb(130 87 230);
+        }
+      }
+
+      .uilogin {
+        border: 1px solid #45af99;
+
+        &:hover {
+          border: 1px solid #45af99;
+        }
+      }
+
+      .uipizza {
+        border: 1px solid #F2C94C;
+
+        &:hover {
+          border: 1px solid #F2C94C;
+        }
+      }
+
+      >article {
+        @include block-article;
+        background-color: $bg-secondary;
+        height: auto;
+
+        h3 {
+          color: $color-white;
+
+          font: {
+            size: 2.4rem;
+            weight: 500;
+          }
+        }
+
+        p {
+          line-height: $gap-3;
+          margin: $gap-3 $gap-0;
+          color: $color-gray;
+          line-height: 3.2rem;
+
+          font: {
+            size: 1.8rem;
+          }
+        }
+      }
+    }
+
+    #ignitetimer {
+      color: rgb(0, 135, 95);
+
+      &::after {
+        background: linear-gradient(270deg, rgb(0, 135, 95) 0%, #17161d 100%);
+      }
+    }
+
+    #widget {
+      color: rgb(130 87 230);
+
+      &::after {
+        background: linear-gradient(270deg, rgb(130 87 230) 0%, #17161d 100%);
+      }
+    }
+
+    #uilogin {
+      color: #45af99;
+
+      &::after {
+        background: linear-gradient(270deg, #45af99 0%, #17161d 100%);
+      }
+    }
+
+    #uipizza {
+      color: #F2C94C;
+
+      &::after {
+        background: linear-gradient(270deg, #F2C94C 0%, #17161d 100%);
+      }
+    }
+
+    a {
+      @include hover-link();
+      color: $color-main;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: -7px;
+        left: 0;
+        transform-origin: bottom right;
+        transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+      }
+
+      font: {
+        size: 2rem;
+        weight: 400;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+  }
+}
